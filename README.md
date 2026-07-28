@@ -99,3 +99,4 @@ https://<your-app-name>.azurestaticapps.net/api/hello?name=Azure
 ```bash
 az staticwebapp delete --name swa-managed-function-test-python --resource-group <your-resource-group>
 ```
+"" 
