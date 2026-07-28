@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SWA Managed Function Test (Python)</title>
+</head>
+<body style="font-family: sans-serif; max-width: 600px; margin: 40px auto;">
+  <h1>Static Web App + Python Managed Function test</h1>
+  <p>Click the button — it calls <code>/api/hello</code>, a Python Managed Function.</p>
+
+  <button onclick="callApi()">Call API</button>
+  <pre id="result" style="background:#f4f4f4; padding:12px; margin-top:16px;"></pre>
+
+  <script>
+    async function callApi() {
+      const resultEl = document.getElementById("result");
+      resultEl.textContent = "Calling /api/hello ...";
+      try {
+        const res = await fetch("/api/hello?name=World");
+        const text = await res.text();
+        resultEl.textContent = "Status: " + res.status + "\n\n" + text;
+      } catch (err) {
+        resultEl.textContent = "Error: " + err;
+      }
+    }
+  </script>
+</body>
+</html>
