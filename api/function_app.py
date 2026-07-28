@@ -17,7 +17,7 @@ def hello(req: func.HttpRequest) -> func.HttpResponse:
     name = name or "there"
 
     payload = {
-        "message": f"Hello, {name}! This response came from a Python Managed Function.",
+        "message": f"Hello, {name}! This response came from a Python and not Powershell Managed Function.",
         "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
     }
 
